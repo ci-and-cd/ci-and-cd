@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Date-Revision-yyyymmdd" content="20180804" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>build-docker &#x2013; Project Information</title>
+    <title>maven-build &#x2013; Project Information</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.7.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -26,15 +26,25 @@
         </a>
             <ul class="nav">
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Parent Project <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-            <li><a href="../index.html" title="maven-build">maven-build</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">DOCUMENTATION <b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li><a href="README.html" title="README">README</a></li>
+            <li><a href="GITFLOW_RELEASE.html" title="How to release Apache Maven projects">How to release Apache Maven projects</a></li>
+            <li><a href="MVN_DEPLOY_PUBLISH_SEGREGATION.html" title="mvn deploy and artifacts publish segregation">mvn deploy and artifacts publish segregation</a></li>
+            <li><a href="TRAVISCI.html" title="travis-ci build">travis-ci build</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li><a href="build-docker/index.html" title="build-docker">build-docker</a></li>
+            <li><a href="#" title="-----">-----</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Modules <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li><a href="build-docker/index.html" title="build-docker">build-docker</a></li>
         </ul>
       </li>
       <li class="dropdown">
@@ -51,6 +61,7 @@
                   <li><a href="index.html" title="About">About</a></li>
                   <li><a href="issue-management.html" title="Issue Management">Issue Management</a></li>
                   <li><a href="licenses.html" title="Licenses">Licenses</a></li>
+                  <li><a href="modules.html" title="Project Modules">Project Modules</a></li>
                   <li><a href="plugin-management.html" title="Plugin Management">Plugin Management</a></li>
                   <li><a href="plugins.html" title="Plugins">Plugins</a></li>
                   <li><a href="scm.html" title="Source Code Management">Source Code Management</a></li>
@@ -74,7 +85,7 @@
     </div>
     <div class="container-fluid">
       <div id="banner">
-        <div class="pull-left"><div id="bannerLeft"><h2>build-docker</h2>
+        <div class="pull-left"><div id="bannerLeft"><h2>maven-build</h2>
 </div>
 </div>
         <div class="pull-right"></div>
@@ -92,10 +103,16 @@
         <div id="leftColumn" class="span2">
           <div class="well sidebar-nav">
     <ul class="nav nav-list">
-      <li class="nav-header">Parent Project</li>
-    <li><a href="../index.html" title="maven-build"><span class="none"></span>maven-build</a></li>
       <li class="nav-header">DOCUMENTATION</li>
     <li><a href="README.html" title="README"><span class="none"></span>README</a></li>
+    <li><a href="GITFLOW_RELEASE.html" title="How to release Apache Maven projects"><span class="none"></span>How to release Apache Maven projects</a></li>
+    <li><a href="MVN_DEPLOY_PUBLISH_SEGREGATION.html" title="mvn deploy and artifacts publish segregation"><span class="none"></span>mvn deploy and artifacts publish segregation</a></li>
+    <li><a href="TRAVISCI.html" title="travis-ci build"><span class="none"></span>travis-ci build</a></li>
+      <li class="nav-header">Projects</li>
+    <li><a href="build-docker/index.html" title="build-docker"><span class="none"></span>build-docker</a></li>
+    <li><a href="#" title="-----"><span class="none"></span>-----</a></li>
+      <li class="nav-header">Modules</li>
+    <li><a href="build-docker/index.html" title="build-docker"><span class="none"></span>build-docker</a></li>
       <li class="nav-header">Project Documentation</li>
     <li class="active"><a href="#"><span class="icon-chevron-down"></span>Project Information</a>
     <ul class="nav nav-list">
@@ -107,6 +124,7 @@
     <li><a href="index.html" title="About"><span class="none"></span>About</a></li>
     <li><a href="issue-management.html" title="Issue Management"><span class="none"></span>Issue Management</a></li>
     <li><a href="licenses.html" title="Licenses"><span class="none"></span>Licenses</a></li>
+    <li><a href="modules.html" title="Project Modules"><span class="none"></span>Project Modules</a></li>
     <li><a href="plugin-management.html" title="Plugin Management"><span class="none"></span>Plugin Management</a></li>
     <li><a href="plugins.html" title="Plugins"><span class="none"></span>Plugins</a></li>
     <li><a href="scm.html" title="Source Code Management"><span class="none"></span>Source Code Management</a></li>
@@ -153,7 +171,7 @@
 <td>This document provides informations on the distribution management of this project.</td></tr>
 <tr class="a">
 <td><a href="index.html">About</a></td>
-<td>Parent pom for docker projects</td></tr>
+<td>Parent pom for maven based projects</td></tr>
 <tr class="b">
 <td><a href="issue-management.html">Issue Management</a></td>
 <td>This document provides information on the issue management system used in this project.</td></tr>
@@ -161,18 +179,21 @@
 <td><a href="licenses.html">Licenses</a></td>
 <td>This document lists the project license(s).</td></tr>
 <tr class="b">
+<td><a href="modules.html">Project Modules</a></td>
+<td>This document lists the modules (sub-projects) of this project.</td></tr>
+<tr class="a">
 <td><a href="plugin-management.html">Plugin Management</a></td>
 <td>This document lists the plugins that are defined through pluginManagement.</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="plugins.html">Plugins</a></td>
 <td>This document lists the build plugins and the report plugins used by this project.</td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="scm.html">Source Code Management</a></td>
 <td>This document lists ways to access the online source repository.</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="summary.html">Summary</a></td>
 <td>This document lists other related information of this project</td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="team.html">Team</a></td>
 <td>This document provides information on the members of this project. These are the individuals who have contributed to the project in one form or another.</td></tr></table></div></div>
         </div>

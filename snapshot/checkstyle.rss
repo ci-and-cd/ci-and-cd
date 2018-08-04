@@ -19,9 +19,9 @@ under the License.
 -->
 <rss version="0.91">
   <channel>
-    <title>build-docker - Checkstyle report</title>
-    <link>https://github.com/ci-and-cd/maven-build/build-docker</link>
-    <description>build-docker - Checkstyle report</description>
+    <title>maven-build - Checkstyle report</title>
+    <link>https://github.com/ci-and-cd/maven-build</link>
+    <description>maven-build - Checkstyle report</description>
     <language>en-us</language>
     <copyright>&#169;2018</copyright>
     <item>
@@ -30,9 +30,9 @@ under the License.
              Warnings: 0,
              Infos: 0
       </title>
-            <link>https://github.com/ci-and-cd/maven-build/build-docker/checkstyle.html</link>
+            <link>https://github.com/ci-and-cd/maven-build/checkstyle.html</link>
       <description>
-        <p>Click <a href="https://github.com/ci-and-cd/maven-build/build-docker/checkstyle.html">here</a> for the full Checkstyle report.</p>
+        <p>Click <a href="https://github.com/ci-and-cd/maven-build/checkstyle.html">here</a> for the full Checkstyle report.</p>
 
         <table summary="Files" boder="1">
           <thead>
